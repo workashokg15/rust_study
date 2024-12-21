@@ -1,0 +1,27 @@
+@startuml observer
+skinparam Style strictuml
+interface Observer {
+    +update()
+}   
+class ConcreteObserver1 {
+    +update()
+}
+class ConcreteObserver2 {
+    +update()
+}
+interface Subject {
+    +attach()
+    +detach()
+    +notify()
+}
+class ConcreteSubject {
+    +attach()
+    +detach()
+    +notify()
+}
+Observer <|-- ConcreteObserver1
+Observer <|-- ConcreteObserver2
+Subject <|-- ConcreteSubject
+Observer o.. Subject
+@enduml
+
