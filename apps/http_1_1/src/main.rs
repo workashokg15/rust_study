@@ -1,39 +1,27 @@
-use core::slice;
+use std::option::Option;
+use http::Method; //can also use as http::method::Method, since we have added in http://mod.rs we will use shortcut everywhere
+use server::Server;
+use http::Request; //can also use as http::request::Request
+
+
+mod server;
+mod http;
+
 
 fn main() {
-    // let string = String::from("127.0.0.1:8080");
-    // let string1: String = String::from("😻😻");
-    // let c: char = string1[0..4].chars().next().unwrap();
-    // let start_port = string.find(':').unwrap();
-    // let string_slice= &string[start_port..];
-    // let string_borrow: &str = &string;
-    // let string_literal = "1234";
-    // let bing = "bing".to_string();
+    let get = Method::GET;
+    let delete = Method::DELETE;
+    let post = Method::POST;
+    let put = Method::PUT;
 
-    // dbg!(&string);
-    // dbg!(string_slice);
-    // dbg!(string_borrow);
-    // dbg!(string_literal);
-    // dbg!(bing);
-    // dbg!(string1);
-    // dbg!(c);
-
-    let server = Server::new(string_slice);
+    let string = String::from("127.0.0.1:8080");
+    let server = Server::new(&string);
     server.run();
 }
 
-struct Server {
-    addr: String,
-}
 
-impl Server {
-    fn new(addr: &str) -> Self {
-        Self {
-            addr: addr.to_string(),
-        }
-    }
 
-    fn run(&self) {
-        println!("Server is running on {}", self.addr);
-    }
-}
+
+
+
+
