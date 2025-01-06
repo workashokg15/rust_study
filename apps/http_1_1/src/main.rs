@@ -20,7 +20,11 @@ fn main() {
 }
 
 
-
+/*
+    GET /user?id=10 HTTP/1.1
+    HEADERS
+    BODY
+*/
 
 
 
