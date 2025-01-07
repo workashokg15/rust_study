@@ -18,6 +18,10 @@ fn main() {
         Result::Ok(v) => println!("Res is : {}", v),
         Result::Err(s) => println!("{}", s),
     }
+
+    if let Res::Ok(v) = a {
+        println!("output is {}", v);
+    }
 }
 
 fn divide(a: i32, b: i32) -> Res<i32, String> {
