@@ -38,6 +38,7 @@ fn main() {
         println!("for hello world loop number {}", i)
     }
 
+    //Using stepper
     let mut st = Stepper{curr: 2, step: 4, max: 25};
 
     loop {
@@ -46,5 +47,15 @@ fn main() {
             None => break,
         }
     }
+    //while use using stepper
 
+    let mut st = Stepper{curr: 3, step: 2, max: 16};
+    while let Some(n) = st.next(){
+        println!("while loop stepper {}", n);    
+    }
+
+    let it = Stepper{curr: 5, step: 1, max: 22};
+    for n in it {
+        println!("for loop n : {}", n);
+    }
 }
